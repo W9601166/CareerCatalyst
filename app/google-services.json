@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698195448686",
+    "project_id": "careercatalyst-5ff9a",
+    "storage_bucket": "careercatalyst-5ff9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698195448686:android:e9f304c490af9ae305277f",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.w9601166.careercatalyst"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWHl_ttQjMlFGhvFTZmtxAAO3rRHpjN6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
