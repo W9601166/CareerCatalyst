@@ -4,6 +4,7 @@ enum class ChatScreens {
     SplashScreen,
     LoginScreen,
     RegisterScreen,
+    ForgotPasswordScreen,
     HomeScreen,
     AddRoomScreen,
     ChatRoomScreen

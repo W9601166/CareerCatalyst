@@ -2,11 +2,9 @@ package uk.ac.tees.w9601166.careercatalyst.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.add_room.AddRoomScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.add_room.AddRoomViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.chat_room.ChatRoomScreen
@@ -15,6 +13,8 @@ import uk.ac.tees.w9601166.careercatalyst.ui.screens.home.HomeScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.home.HomeViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginViewModel
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.forgot_password.ForgotPasswordScreen
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.forgot_password.ForgotPasswordViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.register.RegisterScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.register.RegisterViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.splash.SplashScreen
@@ -34,6 +34,11 @@ fun ChatNavigation() {
         composable(route = ChatScreens.RegisterScreen.name) {
             val viewModel: RegisterViewModel = viewModel()
             RegisterScreen(viewModel = viewModel, navController = navController)
+        }
+
+        composable(route = ChatScreens.ForgotPasswordScreen.name) {
+            val viewModel: ForgotPasswordViewModel = viewModel()
+            ForgotPasswordScreen(viewModel = viewModel, navController = navController)
         }
 
         composable(route = ChatScreens.LoginScreen.name) {

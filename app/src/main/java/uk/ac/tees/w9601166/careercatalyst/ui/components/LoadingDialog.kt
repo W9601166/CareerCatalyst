@@ -11,8 +11,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import uk.ac.tees.w9601166.careercatalyst.R
-import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginViewModel
-import uk.ac.tees.w9601166.careercatalyst.ui.screens.register.RegisterViewModel
 
 @Composable
 fun LoadingDialog() {

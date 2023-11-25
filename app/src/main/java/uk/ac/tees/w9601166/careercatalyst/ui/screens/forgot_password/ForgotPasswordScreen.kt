@@ -1,4 +1,4 @@
-package uk.ac.tees.w9601166.careercatalyst.ui.screens.register
+package uk.ac.tees.w9601166.careercatalyst.ui.screens.forgot_password
 
 import ChatAlertDialog
 import ChatButton
@@ -32,21 +32,18 @@ import uk.ac.tees.w9601166.careercatalyst.ui.navigation.ChatScreens
 
 
 @Composable
-fun RegisterScreen(navController: NavHostController, viewModel: RegisterViewModel) {
-    RegisterContent(
-        viewModel = viewModel,
-        navController = navController
-    )
+fun ForgotPasswordScreen(navController: NavHostController, viewModel: ForgotPasswordViewModel) {
+    ForgotPasswordContent(viewModel = viewModel, navController = navController)
 }
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterContent(viewModel: RegisterViewModel, navController: NavHostController) {
+fun ForgotPasswordContent(viewModel: ForgotPasswordViewModel, navController: NavHostController) {
 
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
-       ChatAppBar(topAppTitle = "Create An Account")
+       ChatAppBar(topAppTitle = "Forgot Password?")
     }) {
         Column(
             modifier = Modifier
@@ -58,21 +55,11 @@ fun RegisterContent(viewModel: RegisterViewModel, navController: NavHostControll
         ) {
             Spacer(modifier = Modifier.fillMaxHeight(0.4F))
             ChatAuthTextField(
-                state = viewModel.firstNameState,
-                label = "First name",
-                errorState = viewModel.firstNameError
-            )
-            ChatAuthTextField(
                 state = viewModel.emailState,
                 label = "Email",
                 errorState = viewModel.emailError
             )
-            ChatAuthTextField(
-                state = viewModel.passwordState,
-                label = "Password",
-                errorState = viewModel.passwordError,
-                isPassword = true
-            )
+
             Spacer(modifier = Modifier.padding(vertical = 8.dp))
             TextButton(onClick = {
                 navController.navigate(ChatScreens.LoginScreen.name)
@@ -88,10 +75,12 @@ fun RegisterContent(viewModel: RegisterViewModel, navController: NavHostControll
             }
             Spacer(modifier = Modifier.padding(vertical = 16.dp))
 
-            ChatButton(buttonText = "Register") {
-                viewModel.sendAuthDataToFirebase()
+            ChatButton(buttonText = "Reset Password") {
+                viewModel.resetPasswordWithEmail()
             }
+
             if (viewModel.showLoading.value) LoadingDialog()
+
             if (viewModel.message.value.isNotEmpty() && viewModel.showDialog.value) ChatAlertDialog(
                 alertMessage = {
                     Text(text = viewModel.message.value, textAlign = TextAlign.Center, style = TextStyle(
@@ -102,7 +91,6 @@ fun RegisterContent(viewModel: RegisterViewModel, navController: NavHostControll
                 },
                 onDismissRequest = {
                     viewModel.showDialog.value = false
-
                 },
                 dismissButton = {
                     TextButton(onClick = {
@@ -111,8 +99,8 @@ fun RegisterContent(viewModel: RegisterViewModel, navController: NavHostControll
                 }
             ) {
                 TextButton(onClick = {
-                    if(viewModel.message.value == "Successful Registration")
-                        navController.navigate(ChatScreens.HomeScreen.name)
+                    if(viewModel.message.value == "Email Sent")
+                        navController.navigate(ChatScreens.LoginScreen.name)
                     viewModel.showDialog.value = false
                 }) { Text(text = "OK") }
             }

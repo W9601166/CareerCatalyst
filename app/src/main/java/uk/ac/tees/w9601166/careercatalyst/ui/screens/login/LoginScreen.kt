@@ -75,7 +75,19 @@ fun LoginContent(viewModel: LoginViewModel, navController: NavHostController) {
                 navController.navigate(ChatScreens.RegisterScreen.name)
             }) {
                 Text(modifier = Modifier.padding(start = 8.dp),
-                    text = "Already have an Account?", style = TextStyle(
+                    text = "New user? Register here", style = TextStyle(
+                        fontSize = 16.sp, color = colorResource(
+                            id = R.color.purple_700
+                        )
+                    )
+                )
+            }
+            Spacer(modifier = Modifier.padding(vertical = 8.dp))
+            TextButton(onClick = {
+                navController.navigate(ChatScreens.ForgotPasswordScreen.name)
+            }) {
+                Text(modifier = Modifier.padding(start = 8.dp),
+                    text = "Forgot password? Reset with email.", style = TextStyle(
                         fontSize = 16.sp, color = colorResource(
                             id = R.color.purple_700
                         )
