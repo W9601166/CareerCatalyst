@@ -106,4 +106,11 @@ dependencies {
     implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation ("com.google.android.gms:play-services-auth:20.7.0") //required by email/passwd auth
     implementation("com.google.firebase:firebase-database-ktx:20.3.0")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Retrofit with Scalar Converter
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.google.code.gson:gson:2.10.1")
 }

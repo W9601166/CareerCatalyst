@@ -11,10 +11,12 @@ import uk.ac.tees.w9601166.careercatalyst.ui.screens.chat_room.ChatRoomScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.chat_room.ChatRoomViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.home.HomeScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.home.HomeViewModel
-import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginScreen
-import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginViewModel
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.jobs.JobsScreen
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.jobs.JobsViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.forgot_password.ForgotPasswordScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.forgot_password.ForgotPasswordViewModel
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginScreen
+import uk.ac.tees.w9601166.careercatalyst.ui.screens.login.LoginViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.register.RegisterScreen
 import uk.ac.tees.w9601166.careercatalyst.ui.screens.register.RegisterViewModel
 import uk.ac.tees.w9601166.careercatalyst.ui.splash.SplashScreen
@@ -59,6 +61,11 @@ fun ChatNavigation() {
         composable(route = ChatScreens.ChatRoomScreen.name){
             val viewModel : ChatRoomViewModel = viewModel()
             ChatRoomScreen(viewModel,navController)
+        }
+
+        composable(route = ChatScreens.ReedsJobs.name){
+            val viewModel : JobsViewModel = viewModel()
+            JobsScreen(navController, viewModel)
         }
 
     }

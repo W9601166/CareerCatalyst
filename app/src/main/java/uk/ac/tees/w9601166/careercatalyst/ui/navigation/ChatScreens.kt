@@ -7,5 +7,6 @@ enum class ChatScreens {
     ForgotPasswordScreen,
     HomeScreen,
     AddRoomScreen,
-    ChatRoomScreen
+    ChatRoomScreen,
+    ReedsJobs
 }
