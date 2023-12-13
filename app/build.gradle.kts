@@ -90,18 +90,14 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.4")
 
     implementation("androidx.compose.material3:material3:1.2.0-alpha10")
-
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
-
     implementation("androidx.core:core-splashscreen:1.0.1")
-
     implementation("com.github.vinchamp77:buildutils:0.0.8")
 
     //Note: doesn't seem to work
     implementation (platform("com.google.firebase:firebase-bom:32.0.0"))
     implementation ("com.firebaseui:firebase-ui-auth")
     implementation ("com.google.android.gms:play-services-auth") //required by email/passwd auth
-
 
     implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation ("com.google.android.gms:play-services-auth:20.7.0") //required by email/passwd auth
